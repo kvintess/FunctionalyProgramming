@@ -2,14 +2,16 @@
 import random
 
 class Leming:
-    pass
+    total = 0
 
-total_lemings=0
+    def __init__(self):
+        #обращаться через именование класса
+        Leming.total += 1
+
 family = []
 family_size = random.randint(16,32)
 
 while len(family) < family_size:
     new_leming = Leming()
     family.append(new_leming)
-    total_lemings += 1
-print(total_lemings)
+print(Leming.total)
