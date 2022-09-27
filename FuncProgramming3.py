@@ -19,16 +19,23 @@ import random
 class leming:
     names = ['peter', 'july', 'alex', 'max']
     tail_lenght = 20
+    total = 0
 
     def __init__(self):
         self.tail_lenght = random.randint(15, 25)
         self.name = random.choice(leming.names)
+        leming.total = leming.total + 1
 
     def __str__(self):
         return 'name ' + self.name + ' tail lenght ' + str(self.tail_lenght)
 
-print(leming.tail_lenght)
-
-new_lemming = leming()
-print(new_lemming.tail_lenght)
-print(new_lemming)
+borrow = []
+borrow_depth = random.randint(90, 100)
+while len(borrow) < borrow_depth:
+    family = []
+    family_size = random.randint(16, 32)
+    while len(family) < family_size:
+        new_lemming = leming()
+        family.append(new_lemming)
+    borrow.append(family)
+print(leming.total)
